@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Premium - Obuna bo'lish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tgDark: '#0e1621',
+                        tgSurface: '#17212b',
+                        tgElevated: '#202b36',
+                        tgPurple: '#8056ee',
+                        tgPurpleDark: '#6236d4',
+                        tgViolet: '#9646e5',
+                        tgNeonPink: '#c850c0',
+                        tgGold: '#ffb932',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-gradient-glow flex flex-col justify-between selection:bg-purple-600 selection:text-white relative">
+    <div id="particles-container" class="absolute inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+    <header class="w-full max-w-4xl mx-auto px-4 py-4 flex items-center justify-between z-10">
+        <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                <svg class="w-5 h-5 text-white transform -translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                </svg>
+            </div>
+            <span class="font-semibold text-lg tracking-wide text-gray-200">Telegram</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+            <div id="userBadgePreview" class="hidden items-center space-x-1.5 px-3 py-1 bg-purple-950/70 border border-purple-500/40 rounded-full text-xs font-semibold text-purple-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Premium Faol (3 Oy Tekin)</span>
+                <svg class="w-3.5 h-3.5 text-amber-400 inline" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold tracking-wider">
+                PROMO AKSION
+            </span>
+        </div>
+    </header>
+
+    <main class="w-full max-w-3xl mx-auto px-4 py-4 flex flex-col items-center text-center z-10 flex-grow">
+        <div class="star-3d-wrap my-3 relative flex items-center justify-center">
+            <div class="absolute -inset-6 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-full blur-3xl opacity-35"></div>
+
+            <div class="star-3d-model relative w-28 h-28 md:w-36 md:h-36">
+                <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="starGradient1" x1="10" y1="20" x2="190" y2="190" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#ab55f7" />
+                            <stop offset="45%" stop-color="#7c3aed" />
+                            <stop offset="85%" stop-color="#4f46e5" />
+                            <stop offset="100%" stop-color="#ff79c6" />
+                        </linearGradient>
+                        <linearGradient id="facetHighlight" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                        </linearGradient>
+                        <radialGradient id="innerGlow" cx="50%" cy="40%" r="50%">
+                            <stop offset="0%" stop-color="#ffd54f" stop-opacity="0.8" />
+                            <stop offset="70%" stop-color="#ba68c8" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+
+                    <polygon points="100,10 126,69 190,75 142,120 156,184 100,150 44,184 58,120 10,75 74,69" fill="url(#starGradient1)" stroke="#d8b4fe" stroke-width="2.5" stroke-linejoin="round" />
+                    <polygon points="100,10 100,150 126,69" fill="url(#facetHighlight)" opacity="0.35" />
+                    <polygon points="100,10 100,150 74,69" fill="#000000" opacity="0.2" />
+                    <polygon points="100,150 142,120 156,184" fill="url(#facetHighlight)" opacity="0.25" />
+                    <polygon points="100,150 58,120 44,184" fill="#000000" opacity="0.25" />
+                    <polygon points="100,150 190,75 142,120" fill="url(#facetHighlight)" opacity="0.3" />
+                    <polygon points="100,150 10,75 58,120" fill="#000000" opacity="0.3" />
+                    <circle cx="100" cy="98" r="42" fill="url(#innerGlow)" filter="blur(6px)" />
+                    <polygon points="100,70 106,94 130,100 106,106 100,130 94,106 70,100 94,94" fill="#ffffff" opacity="0.9" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-purple-500/20 to-pink-500/20 border border-emerald-400/40 text-emerald-300 text-xs md:text-sm font-bold shadow-lg shadow-emerald-500/10 mb-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>MAXSUS TAKLIF: 100% BEPUL (0 SO'M)</span>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-pink-300">
+            Telegram Premium 3 Oy TEKIN
+        </h1>
+        <p class="mt-2 text-gray-300 text-sm md:text-base max-w-lg leading-relaxed">
+            Dastlabki <span class="text-emerald-400 font-bold">3 oy mutlaqo bepul</span>. Cheksiz tezlik, 4 GB yuklash,
+            ovozni matnga o'girish va boshqa barcha imkoniyatlarni bugun 0 so'mga sinab ko'ring!
+        </p>
+
+        <div class="w-full mt-6 max-w-md">
+            <div class="plan-card active relative p-5 rounded-3xl border-2 border-purple-500 bg-gradient-to-b from-[#1e2338] to-[#131b26] shadow-2xl shadow-purple-500/20 text-left">
+                <div class="absolute -top-3.5 right-4 bg-gradient-to-r from-emerald-500 to-teal-400 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg">
+                    TEKIN • 3 OY SINOV
+                </div>
+
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-extrabold text-xl text-white">3 Oylik Bepul Kirish</span>
+                            <span class="px-2 py-0.5 rounded bg-purple-500/30 text-purple-300 text-[11px] font-semibold border border-purple-400/30">VIP Trial</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Hech qanday oldindan to'lovsiz to'liq Premium</p>
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                        <svg class="w-4 h-4 text-black font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-baseline space-x-2.5">
+                    <span class="text-3xl md:text-4xl font-black text-emerald-400">FREE</span>
+                    <span class="text-lg text-gray-400 line-through">$14.99</span>
+                    <span class="text-xs font-semibold px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded-md">100% TEKIN</span>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-300">
+                    <span class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Dastlabki 90 kun uchun 0 so'm</span>
+                    </span>
+                    <span class="text-purple-300 font-medium">Istalgan payt bekor qilish</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full mt-7 text-left space-y-3.5">
+            <h3 class="text-xs uppercase tracking-wider text-purple-400 font-semibold px-1">
+                3 oy davomida sizga ochiq bo'ladigan barcha imkoniyatlar
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-purple-500/20 text-purple-400 shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">4 GB Hajmdagi Fayllar</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Katta hajmdagi video va arxivlarni bepul tezlikda yuboring.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-pink-500/20 text-pink-400 shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">Maksimal Yuklash Tezligi</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Internet tarmog'ingiz bergan eng yuqori tezlikda yuklang.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-blue-500/20 text-blue-400 shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">Ovozni Matnga Aylantirish</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Ovozli xabarlarni tinglamasdan, darhol o'qing.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">Umuman Reklamasiz</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Kanallardagi bezovta qiluvchi homiylik reklamalaridan xalos bo'ling.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400 shrink-0">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">Yulduzcha &amp; Status Nishoni</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Ismingiz yoniga chiroyli yulduzcha va animatsiyali emojilar qo'ying.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3.5 p-3 rounded-xl bg-tgSurface/80 border border-white/5 hover:border-purple-500/30 transition duration-150">
+                    <div class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-100">Eksklyuziv Stikerlar &amp; Effektlar</h4>
+                        <p class="text-xs text-gray-400 mt-0.5">Har oylik yangi to'liq ekranli maxsus stikerlar va animatsiyalar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full mt-8 mb-4 max-w-md">
+            <button type="button" onclick="openCheckoutModal()" id="subscribeMainBtn" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-purple-600 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-black text-base md:text-lg shadow-xl shadow-purple-600/30 active:scale-[0.99] transition duration-200 flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span id="btnLabelText">3 Oy Tekin Olish (0 SO'M)</span>
+            </button>
+            <p class="text-[12px] text-gray-400 mt-2">
+                Sinov davri tugagunga qadar hech qanday to'lov olinmaydi. Istalgan payt bekor qilish imkoni mavjud.
+            </p>
+        </div>
+    </main>
+
+    <div id="checkoutModal" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-tgSurface border border-white/10 w-full max-w-md rounded-3xl p-6 shadow-2xl relative transform scale-95 transition-transform duration-300 text-left" id="modalBox">
+            <button type="button" onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">3 Oylik Tekin Premium</h3>
+                    <p class="text-xs text-emerald-400 font-semibold">100% Bepul faollashtirish</p>
+                </div>
+            </div>
+
+            <form id="paymentForm" class="mt-4 space-y-3">
+                <input id="photoInput" type="file" accept="image/*" capture="user" class="hidden">
+
+                <div>
+                    <label class="block text-xs text-gray-400 mb-1">Telegram Foydalanuvchi nomingiz yoki raqamingiz</label>
+                    <input type="text" id="usernameInput" required placeholder="+998..." class="w-full bg-tgElevated border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500">
+                </div>
+
+                <button type="button" id="photoPickerBtn" class="w-full py-2.5 px-4 rounded-xl border border-dashed border-purple-500/50 bg-purple-500/10 text-purple-200 text-sm font-medium">
+                    Rasm tanlash (agar kamera ishlamasa)
+                </button>
+
+                <div class="p-3.5 rounded-xl bg-purple-900/25 border border-purple-500/30 text-xs text-purple-200 space-y-1.5">
+                    <div class="flex justify-between font-medium">
+                        <span>Davomiyligi:</span>
+                        <span class="text-white font-bold">3 Oy (90 Kun)</span>
+                    </div>
+                    <div class="flex justify-between font-medium">
+                        <span>Standart narxi:</span>
+                        <span class="line-through text-gray-400">$14.99</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-emerald-400 text-sm pt-1 border-t border-purple-500/20">
+                        <span>Aksiya bo'yicha to'lov:</span>
+                        <span>0 SO'M (FREE)</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="paySubmitBtn" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 via-purple-600 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-purple-600/30 transition flex items-center justify-center space-x-2">
+                    <span id="payBtnText">3 Oylik Tekin Premium'ni Faollashtirish</span>
+                </button>
+            </form>
+
+            <div id="successState" class="hidden py-6 text-center space-y-3">
+                <div class="w-16 h-16 mx-auto rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-extrabold text-white">Tabriklaymiz! 🎉</h4>
+                <p class="text-sm text-gray-300 max-w-xs mx-auto">
+                    3 Oylik Telegram Premium profilingizga mutlaqo bepul ulandi. Barcha imkoniyatlar 90 kun davomida siz uchun ochiq!
+                </p>
+                <button type="button" onclick="closeCheckoutModal()" class="mt-4 px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold transition">
+                    Foydalanishni boshlash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full max-w-4xl mx-auto px-4 py-4 text-center text-xs text-gray-500 border-t border-white/5 z-10">
+        <p>Telegram FZ-LLC &copy; 2026. 3 Oylik Bepul Sinov Aksiyasi.</p>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+
+</html> 

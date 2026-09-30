@@ -1,0 +1,99 @@
+body {
+            background-color: #0b1118;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow */
+        .bg-gradient-glow {
+            background: radial-gradient(circle at 50% 15%, rgba(135, 82, 245, 0.28) 0%, rgba(85, 51, 180, 0.12) 40%, rgba(11, 17, 24, 0) 75%);
+        }
+
+        /* Rotating 3D Star Container */
+        .star-3d-wrap {
+            perspective: 1000px;
+        }
+
+        .star-3d-model {
+            animation: floatStar 5s ease-in-out infinite alternate, rotateStarGlow 14s linear infinite;
+            transform-style: preserve-3d;
+            filter: drop-shadow(0 0 45px rgba(154, 82, 255, 0.75)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+        }
+
+        @keyframes floatStar {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(4deg) scale(1.03);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes rotateStarGlow {
+            0% {
+                filter: drop-shadow(0 0 35px rgba(154, 82, 255, 0.65)) drop-shadow(0 0 20px rgba(98, 54, 212, 0.4));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 55px rgba(200, 80, 192, 0.85)) drop-shadow(0 0 30px rgba(255, 185, 50, 0.5));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 35px rgba(154, 82, 255, 0.65)) drop-shadow(0 0 20px rgba(98, 54, 212, 0.4));
+            }
+        }
+
+        /* Floating mini particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatParticle 8s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) scale(0.6);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-90px) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Card active ring highlight */
+        .plan-card.active {
+            border-color: #8b5cf6;
+            background: linear-gradient(145deg, rgba(32, 43, 54, 0.95), rgba(76, 29, 149, 0.25));
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0e1621;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2b394a;
+            border-radius: 999px;
+        }
